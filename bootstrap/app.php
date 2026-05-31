@@ -19,8 +19,9 @@ return Application::configure(basePath: dirname(__DIR__))
 
         // Daftarkan middleware dengan nama alias 'role'
     $middleware->alias([
-        'role' => \App\Http\Middleware::class,
-    ]);
+    // Ganti 'RoleMiddleware' dengan nama file middleware yang Anda buat
+    'role' => \App\Http\Middleware\RoleMiddleware::class,
+]);
 
     })
     ->withExceptions(function (Exceptions $exceptions): void {
