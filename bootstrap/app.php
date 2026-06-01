@@ -11,18 +11,16 @@ return Application::configure(basePath: dirname(__DIR__))
         commands: __DIR__.'/../routes/console.php',
         health: '/up',
     )
-    ->withMiddleware(function (Middleware $middleware): void {
+    ->withMiddleware(function (Middleware $middleware) {
         $middleware->web(append: [
             \App\Http\Middleware\HandleInertiaRequests::class,
             \Illuminate\Http\Middleware\AddLinkHeadersForPreloadedAssets::class,
         ]);
 
-        // Daftarkan middleware dengan nama alias 'role'
-    $middleware->alias([
-    // Ganti 'RoleMiddleware' dengan nama file middleware yang Anda buat
-    'role' => \App\Http\Middleware\RoleMiddleware::class,
-]);
-
+        // Tetap pertahankan alias role milikmu
+        $middleware->alias([
+            'role' => \App\Http\Middleware\RoleMiddleware::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //

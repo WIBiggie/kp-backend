@@ -14,31 +14,31 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        // 1. Buat Akun Sapras SMKN 2 Tasikmalaya
+        // 1. Buat Akun Siswa
         User::create([
-            'name' => 'Siswa Test',
-            'username' => 'siswatest', // <--- Tambahkan ini
-            'email' => 'siswa@gmail.com',
-            'password' => Hash::make('password123'),
-            'role' => 'siswa',
+            'nama_user' => 'Siswa Test',   // <-- Ditambahkan agar database tidak error
+            'username'  => 'siswatest',
+            'email'     => 'siswa@gmail.com',
+            'password'  => Hash::make('password123'),
+            'role'      => 'siswa',
         ]);
 
         // 2. Akun untuk Jurusan
         User::create([
-            'name' => 'Admin Jurusan',
-            'username' => 'adminjurusan', // <--- Tambahkan ini
-            'email' => 'jurusan@gmail.com',
-            'password' => Hash::make('password123'),
-            'role' => 'jurusan',
+            'nama_user' => 'Admin Jurusan SKN2', // <-- Ditambahkan agar database tidak error
+            'username'  => 'adminjurusan',
+            'email'     => 'jurusan@gmail.com',
+            'password'  => Hash::make('password123'),
+            'role'      => 'jurusan',
         ]);
 
         // 3. Akun untuk Manajemen Sarpras
         User::create([
-            'name' => 'Tim Sarpras',
-            'username' => 'timsarpras', // <--- Tambahkan ini
-            'email' => 'sarpras@gmail.com',
-            'password' => Hash::make('password123'),
-            'role' => 'sapras',
+            'nama_user' => 'Tim Sarpras SMKN 2', // <-- Ditambahkan agar database tidak error
+            'username'  => 'timsarpras',
+            'email'     => 'sarpras@gmail.com',
+            'password'  => Hash::make('password123'),
+            'role'      => 'manajemen', // Sesuai dengan nama role di web.php Anda sebelumnya
         ]);
     }
 }
